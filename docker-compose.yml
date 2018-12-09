@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+
+  # Mysql database
+  db:
+    image: mysql
+    networks:
+      - dockerdemo
+
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dockerdemo-db
+      MYSQL_USER: avishek
+      MYSQL_PASSWORD: avishek1
+
+
+  # Application
+  webapp:
+    image: dockerdemo-webapp-image
+    networks:
+        - dockerdemo
+    ports:
+       - "8098:8098"
+    depends_on:
+      - db
+
+
+networks:
+  dockerdemo:
+
+

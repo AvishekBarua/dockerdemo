@@ -1,0 +1,31 @@
+
+flyway:
+#    user: avishek
+#    password: avishek1
+    locations: classpath:db
+    #clean-on-validation-error: true
+    #"clean-on-validation-error" forces to drop all objects (tables, views, procedures, �)
+
+
+# DataSource settings: set here your own configurations for the database
+# connection. In this example we have "netgloo_blog" as database name and
+# "root" as username and password.
+
+spring:
+  datasource:
+    url: jdbc:mysql://db:3306/dockerdemo-db
+    #url: jdbc:mysql://localhost:3306/dockerdemo-db
+    username: avishek
+    password: avishek1
+#    testWhileIdle: true
+#    validationQuery: SELECT 1
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+server:
+  port: 8098
