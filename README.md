@@ -12,5 +12,7 @@ Installation of Docker
 
 ### How to run this app:
 dockerdemo>docker-compose up -d db
+
 dockerdemo>docker build -t dockerdemo-webapp-image .
+
 dockerdemo>docker-compose up webapp
